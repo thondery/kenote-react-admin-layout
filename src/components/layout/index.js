@@ -3,7 +3,6 @@
 // ------------------------------------
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import './style.scss'
 import Permission from '../permission'
 import Breadcrumb from '../breadcrumb'
 

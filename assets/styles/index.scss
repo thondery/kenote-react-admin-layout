@@ -1,6 +1,185 @@
 // ------------------------------------
 // Sass Style
 // ------------------------------------
+
+.layout-warpper {
+  height: inherit;
+  display: flex;
+  width: 100%;
+}
+
+.layout-page-container {
+  height: inherit;
+  width: 100%;
+  overflow-y: auto;
+  position: relative;
+
+  >div {
+    padding: 20px;
+  }
+
+  .ant-breadcrumb {
+    font-size: 15px;
+    border-left-width: 2px;
+    border-left-color: #49a9ee;
+    border-left-style: solid;
+    line-height: 15px;
+    padding-left: 10px;
+    position: relative;
+    margin-bottom: 40px;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background: rgba(0,0,0,.2);
+      position: absolute;
+      top: 32px;
+      left: -2px;
+    }
+
+    a {
+      font-weight: normal;
+    }
+  }
+
+  .layout-page-tools {
+    margin: 10px 0 20px 0;
+  }
+
+  .layout-page-loading {
+    height: 3px;
+    background: #49a9ee;
+    position: absolute;
+    top: 0;
+    //width: 10%;
+    //overflow: hidden;
+    padding: 0;
+    transition: all 1.2s ;
+  }
+}
+
+.layout-sider {
+  flex: 0 0 260px;
+  background-color: #333;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all .3s ;
+  
+  .menu-collapsed {
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: rgba(255, 255, 255, 0.67);
+    background: #333;
+    transition: all .3s ;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.app-layout-body {
+  display: flex;
+  padding: 20px;
+  flex: 1;
+  flex-direction: column;
+  background-color: #eaedf1;
+  overflow-y: auto;
+
+  .ant-breadcrumb {
+    font-size: 15px;
+    border-left-width: 2px;
+    border-left-color: #49a9ee;
+    border-left-style: solid;
+    line-height: 15px;
+    padding-left: 10px;
+    position: relative;
+    margin-bottom: 50px;
+    margin-top: 30px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 100%;
+      background: rgba(0,0,0,.2);
+      position: absolute;
+      top: 42px;
+      left: -2px;
+    }
+  }
+
+  .app-layout-wrap {
+    flex-flow: wrap;
+
+    a {
+      .app-layout-wrap-item {
+        width: 240px;
+        height: 150px;
+        background: #fff;
+        margin: 10px;
+        //border: 1px solid #ccc;
+        justify-content: center;
+        align-items: center;
+        transition: all .8s;
+
+        h2 {
+          color: #999;
+          text-decoration: 'none'
+        }
+      }
+
+      &:hover {
+
+        .app-layout-wrap-item {
+          background: #40badc;
+
+          h2 {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .ant-table-tbody {
+    background: #fff;
+    font-family: "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
+    font-size: 13px;
+  }
+  
+  .ant-form-item-label label {
+    font-family: "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
+    font-size: 14px;
+    padding-right: 20px;
+  }
+    
+}
+
+.has-success.has-feedback:after {
+  content: ''
+}
+
+form .has-feedback .ant-select-arrow {
+  right: 10px;
+}
+
+.app-modal-form {
+  
+  .ant-checkbox-group-item {
+    width: 160px;
+  }
+}
+
 .layout-header {
   width: 100%;
   height: 54px;

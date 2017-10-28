@@ -1,6 +1,6 @@
 {
   "name": "kenote-react-admin-layout",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "react admin layout",
   "main": "index.js",
   "repository": "https://github.com/thondery/kenote-react-admin-layout.git",
@@ -12,6 +12,9 @@
     "prop-types": "*",
     "react": "*",
     "react-router-dom": "*"
+  },
+  "scripts": {
+    "build": "babel src -d lib"
   },
   "devDependencies": {
     "antd": "^2.13.7",

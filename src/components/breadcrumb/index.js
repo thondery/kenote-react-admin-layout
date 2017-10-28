@@ -3,7 +3,6 @@
 // ------------------------------------
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import './style.scss'
 import { Breadcrumb } from 'antd'
 import { Link } from 'react-router-dom'
 

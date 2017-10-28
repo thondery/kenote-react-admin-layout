@@ -3,7 +3,6 @@
 // ------------------------------------
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import './style.scss'
 import { Dropdown, Menu, Icon, Tag, Badge, Input, Layout } from 'antd'
 import classnames from 'classnames'
 import { Link } from 'react-router-dom'

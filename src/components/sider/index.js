@@ -3,7 +3,6 @@
 // ------------------------------------
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import './style.scss'
 import { Link } from 'react-router-dom'
 import { Menu, Icon, Button } from 'antd'
 const SubMenu = Menu.SubMenu
