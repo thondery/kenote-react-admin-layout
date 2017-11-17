@@ -1,12 +1,23 @@
 {
   "presets": [
     ["env", {
-      "useBuiltIns": true
+      "modules": false,
+      "targets": {
+        "ie9": true
+      },
+      "uglify": true
     }],
     "react",
     "stage-0"
   ],
   "plugins": [
-    "transform-runtime"
+    "transform-es2015-modules-commonjs",
+    "transform-decorators-legacy",
+    "lodash",
+    ["import", { 
+      "libraryName": "antd", 
+      "libraryDirectory": "lib",
+      "style": "css" 
+    }]
   ]
 }
