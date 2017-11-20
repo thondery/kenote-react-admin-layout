@@ -6,7 +6,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { rootActions } from 'reduxs'
-import { Breadcrumb, Layout, Sider } from '../../../../src'
+import { Icon } from 'antd'
+import { Breadcrumb, Layout, Sider, Header } from '../../../../src'
 
 @connect(
   state => ({
@@ -79,6 +80,42 @@ export default class Home extends PureComponent {
           </div>
         )}
         sider={sider}
+        header={(
+          <Header
+            auth={{
+              username: 'admin',
+              group: {
+                flag: ['1001', '1002', '1003']
+              }
+            }}
+            menus={[
+              {
+                key: 'auth',
+                name: 'admin',
+                data: [
+                  {
+                    key: '9001',
+                    name: '基本资料',
+                    icon: (<Icon type="exception" />)
+                  },
+                  {
+                    key: '9002',
+                    name: '修改密码',
+                    icon: (<Icon type="idcard" />)
+                  },
+                  {
+                    type: 'driver'
+                  },
+                  {
+                    key: '-1',
+                    name: '退出管理控制台',
+                    type: 'quit'
+                  }
+                ]
+              }
+            ]}
+            />
+        )}
         pageLoading
         >
         <span>Hello, Welcome to World of React!</span>
