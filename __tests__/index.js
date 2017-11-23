@@ -1,17 +1,28 @@
 
 import React from 'react'
 import renderer from 'react-test-renderer'
-import KenoteLayout from '../src'
+import { Layout, Sider, Breadcrumb, Header } from '../lib'
+import { Link } from 'react-router-dom'
 
-test('component => KenoteLayout', () => {
+test('component => Layout', () => {
   const component = renderer.create(
-    <KenoteLayout name="test" >
+    <Layout >
      React test
-    </KenoteLayout>
+    </Layout>
   )
   expect(component).toMatchSnapshot()
-  expect(component.toJSON().type).toEqual('div')
-  expect(component.toJSON().children[0].type).toEqual('p')
-  expect(component.toJSON().children[0].children).toEqual(['name: ', 'test'])
-  expect(component.toJSON().children[1]).toEqual('React test')
+})
+
+test('component => Sider', () => {
+  const component = renderer.create(
+    <Sider location={{ pathname: '/' }} />
+  )
+  expect(component).toMatchSnapshot()
+})
+
+test('component => Breadcrumb', () => {
+  const component = renderer.create(
+    <Breadcrumb />
+  )
+  expect(component).toMatchSnapshot()
 })

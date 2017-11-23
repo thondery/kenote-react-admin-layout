@@ -4,6 +4,7 @@ import { Dropdown, Menu, Icon, Tag, Badge, Input, Layout } from 'antd'
 import { Link } from 'react-router-dom'
 import '../styles/header.scss'
 import { AuthCell, NormalCell } from './cell'
+import _ from 'lodash'
 
 export default class Header extends PureComponent {
   
@@ -20,12 +21,11 @@ export default class Header extends PureComponent {
     menus: null,
     onPressItem: () => null,
     logoSource: require('../assets/images/Icon-60@2x.png'),
-    titleName: '仪表盘'
+    titleName: '管理控制台'
   }
 
   constructor (props) {
     super(props)
-    //this.handleClick = this.handleClick.bind(this)
   }
   
   render() {
@@ -45,7 +45,7 @@ export default class Header extends PureComponent {
             let { key, name, data } = item
             if (item.key === 'auth') {
               return (
-                <AuthCell {...{ key, name, data }} />
+                <AuthCell {...{ key, name, data, onPressItem }} />
               )
             }
             else if (item.key === 'message') {
@@ -56,7 +56,7 @@ export default class Header extends PureComponent {
             }
             else {
               return (
-                <NormalCell {...{ key, name, data }} />
+                <NormalCell {...{ key, name, data, onPressItem }} />
               )
             }
           })}
@@ -64,4 +64,15 @@ export default class Header extends PureComponent {
       </div>
     )
   }
+}
+
+export const getMenuList = (menus) => {
+  let list = []
+  for (let e of menus) {
+    if (_.has(e, 'data')) {
+      list = _.concat(list, e.data)
+    }
+  }
+  list = _.filter(list, o => _.has(o, 'key'))
+  return list
 }

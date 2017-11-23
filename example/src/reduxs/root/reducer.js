@@ -9,7 +9,13 @@ const initState = {
   initialPending: false,
   initialError: -1,
   initialMessage: null,
-  welcome: null
+  welcome: null,
+  auth: {
+    username: 'admin',
+    group: {
+      flag: ['1001', '1002', '1003']
+    }
+  }
 }
 
 const ACTION_HANDLERS = {

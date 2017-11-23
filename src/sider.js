@@ -10,12 +10,19 @@ export default class Sider extends PureComponent {
   
   static propTypes = {
     location: PropTypes.object,
-    menuSubs: PropTypes.object
+    menuSubs: PropTypes.object,
+    footer: PropTypes.func
   }
   
   static defaultProps = {
     location: null,
-    menuSubs: null
+    menuSubs: null,
+    footer: (collapsed) => (
+      <a href="https://github.com/thondery" target="_blank">
+        <Icon type="github" style={!collapsed ? { fontSize: '16px' } : null} />
+        {!collapsed && <span>github/thondery</span>}
+      </a>
+    )
   }
 
   state = {
@@ -27,7 +34,7 @@ export default class Sider extends PureComponent {
   }
   
   render() {
-    const { location, menuSubs } = this.props
+    const { location, menuSubs, footer } = this.props
     const { pathname } = location
     const pathMatch = pathname.match(/^(\/)([a-z\-]+)/)
     return (
@@ -37,28 +44,34 @@ export default class Sider extends PureComponent {
           onClick={() => this.setState({ collapsed: !this.state.collapsed })}>
           <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
         </div>
-        <Menu
-          mode={'inline'}
-          theme={'dark'}
-          //style={this.state.collapsed ? { width: 64 } : null}
-          inlineCollapsed={this.state.collapsed}
-          defaultOpenKeys={[pathMatch && pathMatch[2]]}
-          selectedKeys={[pathname.toLowerCase()]}
+        <div className="menu-bodyer">
+          <Menu
+            mode={'inline'}
+            theme={'dark'}
+            inlineCollapsed={this.state.collapsed}
+            defaultOpenKeys={[pathMatch && pathMatch[2]]}
+            selectedKeys={[pathname.toLowerCase()]}
           >
-          {menuSubs && _.keys(menuSubs).map( (item, i) => {
-            let { key, name, icon, data, path } = menuSubs[item]
-            return _.has(menuSubs[item], 'data') && data.length > 0
-              ? this.renderSubMenu(key, name, icon, data, pathname.toLowerCase())
-              : (
-                <Menu.Item key={`/${key === 'home' ? '' : key}`}>
-                  <Link to={`/${key === 'home' ? '' : key}`}>
-                    <Icon type={`${icon}`} />
-                    <span>{name}</span>
-                  </Link>
-                </Menu.Item>
-              )
-          })}
-        </Menu>
+            {menuSubs && _.keys(menuSubs).map( (item, i) => {
+              let { key, name, icon, data, path } = menuSubs[item]
+              return _.has(menuSubs[item], 'data') && data.length > 0
+                ? this.renderSubMenu(key, name, icon, data, pathname.toLowerCase())
+                : (
+                  <Menu.Item key={`/${key === 'home' ? '' : key}`}>
+                    <Link to={`/${key === 'home' ? '' : key}`}>
+                      {icon}
+                      <span>{name}</span>
+                    </Link>
+                  </Menu.Item>
+                )
+            })}
+          </Menu>
+        </div>
+        {footer && (
+          <div className={'menu-footer'} >
+            {footer(this.state.collapsed)}
+          </div>
+        )}
       </div>
     )
   }
@@ -67,12 +80,11 @@ export default class Sider extends PureComponent {
     return (
       <SubMenu
         key={key}
-        title={<span><Icon type={icon || 'appstore'} /><span>{name}</span></span>} >
+        title={<span>{icon}<span>{name}</span></span>} >
         {data.map( (item, i) => {
           return(
             <Menu.Item key={`/${item.path}/${item.key}`}>
               <Link to={`/${item.path}/${item.key}`}>
-                {/*<Icon type={`/${item.path}/${item.key}` === pathname ? `right-square-o` : `right-square`} />*/}
                 <span>{item.name}</span>
               </Link>
             </Menu.Item>

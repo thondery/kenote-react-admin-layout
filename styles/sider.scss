@@ -5,6 +5,9 @@
   overflow-x: hidden;
   transition: all .3s ;
   font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   
   .menu-collapsed {
     height: 30px;
@@ -18,6 +21,33 @@
 
     &:hover {
       color: #fff;
+    }
+  }
+
+  .menu-bodyer {
+    height: -webkit-fill-available;
+    overflow-y: auto;
+  }
+
+  .menu-footer {
+    height: 50px;
+    color: rgba(255, 255, 255, 0.67);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #404040;
+
+    a {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .anticon {
+      font-size: 20px;
+    }
+
+    span {
+      margin-left: 10px;
+      font-size: 13px;
     }
   }
 
@@ -39,7 +69,7 @@
   }
 
   .ant-menu.ant-menu-dark .ant-menu-item-selected {
-    //background-color: #F44336;
+    background-color: rgb(94, 148, 211);
   }
   .ant-menu-inline-collapsed > .ant-menu-item, .ant-menu-inline-collapsed > .ant-menu-item-group > .ant-menu-item-group-list > .ant-menu-item, .ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
     
