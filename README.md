@@ -4,12 +4,18 @@ Admin Layout for React
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
+[![Build Status][travis-image]][travis-url]
+[![Codecov Status][codecov-image]][codecov-url]
 [![Gratipay][licensed-image]][licensed-url]
 
 [npm-image]: https://img.shields.io/npm/v/kenote-react-admin-layout.svg
 [npm-url]: https://www.npmjs.org/package/kenote-react-admin-layout
 [downloads-image]: https://img.shields.io/npm/dm/kenote-react-admin-layout.svg
 [downloads-url]: https://npmjs.org/package/kenote-react-admin-layout
+[travis-image]: https://travis-ci.org/thondery/kenote-react-admin-layout.svg?branch=master
+[travis-url]: https://travis-ci.org/thondery/kenote-react-admin-layout
+[codecov-image]: https://img.shields.io/codecov/c/github/thondery/kenote-react-admin-layout/master.svg
+[codecov-url]:   https://codecov.io/github/thondery/kenote-react-admin-layout?branch=master
 [licensed-image]: https://img.shields.io/badge/license-MIT-blue.svg
 [licensed-url]: https://github.com/thondery/kenote-react-admin-layout/blob/master/LICENSE
 
