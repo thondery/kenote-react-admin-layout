@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Dropdown, Menu, Icon, Tag, Badge, Input, Layout } from 'antd'
 import { Link } from 'react-router-dom'
-import '../styles/header.scss'
+import '../styles/header.css'
 import { AuthCell, NormalCell } from './cell'
 import _ from 'lodash'
 

@@ -1,0 +1,21 @@
+.layout-warpper {
+  height: inherit;
+  display: flex;
+  width: 100%; }
+
+.layout-page-container {
+  height: inherit;
+  width: 100%;
+  overflow-y: auto;
+  position: relative; }
+  .layout-page-container > div {
+    padding: 20px; }
+  .layout-page-container .layout-page-tools {
+    margin: 10px 0 20px 0; }
+  .layout-page-container .layout-page-loading {
+    height: 4px;
+    background: #ee5c49;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    transition: all 1.2s; }

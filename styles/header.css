@@ -1,0 +1,96 @@
+.layout-header {
+  width: 100%;
+  height: 54px;
+  background: #373d41;
+  justify-content: space-between;
+  min-width: 1100px;
+  flex-direction: row;
+  display: flex; }
+
+.app-header-link-div {
+  border: 0 #2a2f32 solid;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  transition: all .8s; }
+  .app-header-link-div:hover {
+    background-color: #2a2f32; }
+
+.app-header-link {
+  display: flex;
+  border-color: #2a2f32;
+  border-style: solid;
+  border-width: 0;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 20px; }
+  .app-header-link > span {
+    color: #fff;
+    font-size: 14px;
+    line-height: 50px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.02em;
+    font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei"; }
+  .app-header-link > i {
+    color: #fff; }
+  .app-header-link .ant-tag {
+    height: 20px;
+    padding: 0 4px;
+    margin: 0;
+    margin-left: 4px; }
+    .app-header-link .ant-tag:hover {
+      opacity: 1; }
+  .app-header-link .ant-tag-text {
+    line-height: 1;
+    font-size: 12px; }
+  .app-header-link:hover, .app-header-link.app-header-link-active {
+    background-color: #2a2f32; }
+
+.app-header-start {
+  height: inherit;
+  display: flex; }
+  .app-header-start .app-header-link-div,
+  .app-header-start .app-header-link {
+    border-right-width: 1px; }
+    .app-header-start .app-header-link-div:last-child,
+    .app-header-start .app-header-link:last-child {
+      border-right-width: 0; }
+    .app-header-start .app-header-link-div i,
+    .app-header-start .app-header-link i {
+      font-size: 14px;
+      margin-left: 4px; }
+  .app-header-start .app-header-link-active {
+    background-color: #fff; }
+    .app-header-start .app-header-link-active span {
+      color: #444; }
+    .app-header-start .app-header-link-active i {
+      color: #444; }
+
+.app-header-end {
+  height: inherit;
+  display: flex; }
+  .app-header-end .app-header-link-div,
+  .app-header-end .app-header-link {
+    border-left-width: 1px; }
+    .app-header-end .app-header-link-div:first-child,
+    .app-header-end .app-header-link:first-child {
+      border-left-width: 0; }
+    .app-header-end .app-header-link-div > i,
+    .app-header-end .app-header-link > i {
+      font-size: 16px;
+      margin: 0 4px; }
+
+.app-header-logo {
+  width: 64px;
+  height: 51px;
+  padding: 0; }
+  .app-header-logo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px; }
+
+.app-header-dashboard {
+  width: 196px;
+  height: 51px; }

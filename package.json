@@ -1,13 +1,13 @@
 {
   "name": "kenote-react-admin-layout",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Admin Layout for React",
   "main": "lib/index.js",
   "repository": "https://github.com/thondery/kenote-react-admin-layout.git",
   "author": "thondery <thondery@163.com>",
   "license": "MIT",
   "devDependencies": {
-    "antd": "^3.0.0-beta.7",
+    "antd": "^3.0.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^21.2.0",
     "babel-plugin-import": "^1.6.2",
@@ -19,6 +19,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "codecov": "^3.0.0",
     "jest": "^21.2.1",
+    "node-sass": "^4.7.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2",
@@ -30,9 +31,10 @@
     "react-router-dom": ">=4.0.0"
   },
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "babel src -d lib && npm run sass",
     "test": "jest --u --colors",
-    "codecov": "jest --u --colors --coverage && codecov"
+    "codecov": "jest --u --colors --coverage && codecov",
+    "sass": "node-sass --output styles styles"
   },
   "jest": {
     "moduleFileExtensions": [

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Permission from './permission'
 import Breadcrumb from './breadcrumb'
-import '../styles/layout.scss'
+import '../styles/layout.css'
 
 export default class CoreLayout extends PureComponent {
   
@@ -37,7 +37,9 @@ export default class CoreLayout extends PureComponent {
     const { pageLoading } = this.props
     pageLoading && setTimeout(() => {
       this._loadingView.style.width = '100%'
-      this._loadingView.style.opacity = 0
+      setTimeout(() => {
+        this._loadingView.style.opacity = 0
+      }, 1200)
     }, 0)
   }
   

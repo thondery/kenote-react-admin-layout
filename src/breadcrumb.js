@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Breadcrumb } from 'antd'
 import { Link } from 'react-router-dom'
-import '../styles/breadcrumb.scss'
+import '../styles/breadcrumb.css'
 
 export default class LayoutBreadcrumb extends PureComponent {
   

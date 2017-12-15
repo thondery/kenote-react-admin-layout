@@ -1,6 +1,6 @@
 import React from 'react'
 import { Menu, Dropdown } from 'antd'
-import '../../styles/menu.scss'
+import '../../styles/menu.css'
 
 export default ({ name, data, onPressItem }) => {
   const menuPanel = (

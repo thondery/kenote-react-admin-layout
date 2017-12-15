@@ -7,7 +7,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "antd": "^3.0.0-beta.7",
+    "antd": "^3.0.0",
     "http-services": "^1.2.9",
     "localforage": "^1.5.3",
     "react": "^16.0.0",

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Menu, Icon, Button } from 'antd'
 const SubMenu = Menu.SubMenu
 import _ from 'lodash'
-import '../styles/sider.scss'
+import '../styles/sider.css'
 
 export default class Sider extends PureComponent {
   
