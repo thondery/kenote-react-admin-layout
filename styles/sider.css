@@ -20,7 +20,7 @@
     .layout-sider .menu-collapsed:hover {
       color: #fff; }
   .layout-sider .menu-bodyer {
-    height: -webkit-fill-available;
+    height: 100%;
     overflow-y: auto; }
   .layout-sider .menu-footer {
     height: 50px;
