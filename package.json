@@ -1,6 +1,6 @@
 {
   "name": "kenote-react-admin-layout",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Admin Layout for React",
   "main": "lib/index.js",
   "repository": "https://github.com/thondery/kenote-react-admin-layout.git",

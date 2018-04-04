@@ -97,6 +97,18 @@ export default ({ auth }) => {
       ]
     },
     {
+      key: 'component',
+      data: {
+        component: (<span><Icon type="bell" /></span>)
+      },
+      onPress: () => console.log('今生今世')
+    },
+    {
+      key: 'button',
+      name: '测试按钮',
+      onPress: () => console.log('测试按钮')
+    },
+    {
       key: 'auth',
       name: `${auth && auth.username || '\<admin\>'}`,
       data: [

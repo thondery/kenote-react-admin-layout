@@ -42,7 +42,16 @@ export default class Header extends PureComponent {
         </div>
         <div className={'app-header-end'}>
           {menus && menus.map( (item, i) => {
-            let { key, name, data } = item
+            let { key, name, data, onPress } = item
+            if (!data) {
+              return (
+                <div className={'app-header-link-div'} key={key} onClick={onPress}>
+                  <a className={'app-header-link'}>
+                    <span>{name}</span>
+                  </a>
+                </div>
+              )
+            }
             if (item.key === 'auth') {
               return (
                 <AuthCell {...{ key, name, data, onPressItem }} />
@@ -53,6 +62,15 @@ export default class Header extends PureComponent {
             }
             else if (item.key === 'search') {
               //
+            }
+            else if (_.has(data, 'component')) {
+              return (
+                <div className={'app-header-link-div'} key={key} onClick={onPress}>
+                  <a className={'app-header-link'}>
+                    {data.component}
+                  </a>
+                </div>
+              )
             }
             else {
               return (
